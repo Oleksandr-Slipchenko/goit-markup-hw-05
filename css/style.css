@@ -111,13 +111,15 @@ h3 {
 
 	color: var(--primary-text-color);
 	text-decoration: none;
+
+	transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .nav .link:hover,
 .nav .link:focus {
 	color: var(--text-color-hover);
 }
 
-.nav .link:hover::after {
+.nav .link::after {
 	content: "";
 	position: absolute;
 	bottom: 0;
@@ -125,11 +127,13 @@ h3 {
 	height: 4px;
 	background: var(--text-color-hover);
 	border-radius: 2px;
+	opacity: 0;
+
+	transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.nav .link:hover::after {
 	opacity: 1;
 }
-/* .nav .link:hover.nav .link::after {
-	opacity: 1;
-} */
 
 .nav .item + .item {
 	margin-left: 50px;
@@ -149,19 +153,21 @@ h3 {
 
 	color: #757575;
 	text-decoration: none;
+	transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contacts .link:hover,
-.contacts .link:focus,
-.icon-phone:hover,
-.icon-mail:hover {
+.contacts .link:focus {
 	color: var(--text-color-hover);
 	--color2: var(--text-color-hover);
 }
 .icon-contacts {
-	display: flex;
 	margin-right: 10px;
+	/* transition: var(--color2) 2250ms cubic-bezier(0.4, 0, 0.2, 1); */
 }
+/* .contacts .link:hover .icon-contacts {
+	--color2: var(--text-color-hover);
+} */
 
 .contacts .item + .item {
 	margin-left: 30px;
@@ -369,6 +375,9 @@ h3 {
 	height: 44px;
 	align-items: center;
 	justify-content: center;
+	border-radius: 50%;
+
+	transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-item .link:hover,
@@ -417,6 +426,8 @@ h3 {
 	border: 1px solid #afb1b8;
 	box-sizing: border-box;
 	border-radius: 4px;
+
+	transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .customers .link:hover,
@@ -511,6 +522,7 @@ h3 {
 	border-radius: 50%;
 	background: rgba(255, 255, 255, 0.1);
 	--color1: var(--accent-color);
+	transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .join-in .link:hover,
@@ -616,6 +628,9 @@ h3 {
 	border: none;
 	border-radius: 4px;
 	cursor: pointer;
+
+	transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+		box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .button-filter:hover,
 .button-filter:focus {
@@ -650,51 +665,42 @@ h3 {
 	display: block;
 	text-decoration: none;
 	color: var(--primary-text-color);
+
+	transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .cards-list .link:hover,
 .cards-list .link:focus {
 	box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06), 0px 1px 1px rgba(0, 0, 0, 0.12);
 }
-
-.cards-list .link:hover .card-text,
-.cards-list .link:focus .card-text,
-.cards-list .link:hover .card-images::before,
-.cards-list .link:focus .card-images::before {
-	opacity: 1;
-}
-
 .card-images {
 	position: relative;
+
+	overflow: hidden;
 }
 
 .card-images::before {
-	content: "";
-	display: inline-block;
+	content: "Технокряк это современная площадка распространения коронавируса. Компании используют эту платформу для цифрового шпионажа и атак на защищённые сервера конкурентов.";
 	position: absolute;
-	width: 100%;
-	height: 100%;
-	left: 0;
-	bottom: 0;
-
-	background: rgba(33, 150, 243, 0.9);
-	opacity: 0;
-}
-
-.card-text {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-
-	width: 100%;
-	padding: 63px 24px;
-	margin: 0;
-
 	font-size: 18px;
 	line-height: 1.55;
-	color: #ffffff;
+
+	padding: 63px 24px;
+	height: 100%;
+	top: 50%;
+
+	color: var(--accent-color);
+	background: rgba(33, 150, 243, 0.9);
 	opacity: 0;
+
+	transform: translateY(calc(-50% + 300px));
+	transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+.cards-list .link:hover .card-images::before,
+.cards-list .link:focus .card-images::before {
+	opacity: 1;
+	transform: translateY(-50%);
+}
+
 .card-content {
 	padding-top: 20px;
 	padding-right: 24px;
