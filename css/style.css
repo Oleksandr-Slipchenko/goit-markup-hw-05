@@ -7,6 +7,7 @@
 :root {
 	--primary-text-color: #212121;
 	--text-color-hover: #2196f3;
+	--color-social-link: #afb1b8;
 	--accent-color: #ffffff;
 	--timing-transition: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -154,32 +155,20 @@ h3 {
 	text-decoration: none;
 	transition: color 250ms var(--timing-transition);
 }
-/* .contacts .link:before {
-	content: "";
-	display: block;
-	width: 16px;
-	height: 12px;
-	margin-right: 10px;
-
-	background-image: url(../images/mail.svg);
-	background-repeat: no-repeat;
-	background-size: contain;
-} */
 
 .contacts .link:hover,
 .contacts .link:focus {
 	color: var(--text-color-hover);
-	/* --color2: var(--text-color-hover); */
 }
 
 .icon-contacts {
 	margin-right: 10px;
-
-	/* не работает задержка по времени появдения */
-	transition: --color2 2250ms var(--timing-transition);
+	fill: #757575;
+	transition: fill 250ms var(--timing-transition);
 }
-.contacts .link:hover .icon-contacts {
-	--color2: var(--text-color-hover);
+.contacts .link:hover .icon-contacts,
+.contacts .link:focus .icon-contacts {
+	fill: var(--text-color-hover);
 }
 
 .contacts .item + .item {
@@ -390,13 +379,14 @@ h3 {
 	justify-content: center;
 	border-radius: 50%;
 
-	transition: background-color 250ms var(--timing-transition), color 250ms var(--timing-transition);
+	fill: var(--color-social-link);
+	transition: background-color 250ms var(--timing-transition), fill 250ms var(--timing-transition);
 }
 
 .social-item .link:hover,
 .social-item .link:focus {
 	background-color: var(--text-color-hover);
-	--color1: var(--accent-color);
+	fill: var(--accent-color);
 	border-radius: 50%;
 }
 
@@ -436,17 +426,18 @@ h3 {
 	width: 170px;
 	height: 90px;
 
+	fill: var(--color-social-link);
 	border: 1px solid #afb1b8;
 	box-sizing: border-box;
 	border-radius: 4px;
 
-	transition: border-color 250ms var(--timing-transition);
+	transition: border-color 250ms var(--timing-transition), fill 250ms var(--timing-transition);
 }
 
 .customers .link:hover,
 .customers .link:focus {
 	border-color: var(--text-color-hover);
-	--color1: var(--text-color-hover);
+	fill: var(--text-color-hover);
 }
 
 /* footer */
@@ -534,7 +525,7 @@ h3 {
 
 	border-radius: 50%;
 	background: rgba(255, 255, 255, 0.1);
-	--color1: var(--accent-color);
+	fill: var(--accent-color);
 	transition: background 250ms var(--timing-transition);
 }
 
