@@ -154,6 +154,12 @@ h3 {
 	text-decoration: none;
 	transition: color 250ms var(--timing-transition);
 }
+/* .contacts .link:before {
+	content: url(../images/symbol-defs.svg#icon-mail);
+	display: inline-block;
+	width: 16px;
+	height: 11px;
+} */
 
 .contacts .link:hover,
 .contacts .link:focus {
@@ -373,7 +379,7 @@ h3 {
 	justify-content: center;
 	border-radius: 50%;
 
-	transition: background 250ms var(--timing-transition);
+	transition: background-color 250ms var(--timing-transition), color 250ms var(--timing-transition);
 }
 
 .social-item .link:hover,
