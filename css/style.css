@@ -155,20 +155,29 @@ h3 {
 	transition: color 250ms var(--timing-transition);
 }
 /* .contacts .link:before {
-	content: url(../images/symbol-defs.svg#icon-mail);
-	display: inline-block;
+	content: "";
+	display: block;
 	width: 16px;
-	height: 11px;
+	height: 12px;
+	margin-right: 10px;
+
+	background-image: url(../images/mail.svg);
+	background-repeat: no-repeat;
+	background-size: contain;
 } */
 
 .contacts .link:hover,
 .contacts .link:focus {
 	color: var(--text-color-hover);
-	--color2: var(--text-color-hover);
+	/* --color2: var(--text-color-hover); */
 }
 
 .icon-contacts {
 	margin-right: 10px;
+	transition: --color2 2250ms var(--timing-transition);
+}
+.contacts .link:hover .icon-contacts {
+	--color2: var(--text-color-hover);
 }
 
 .contacts .item + .item {
