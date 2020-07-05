@@ -20,6 +20,7 @@ html {
 }
 
 body {
+	padding-top: 79px;
 	background-color: #ffffff;
 	color: var(--primary-text-color);
 	font-family: Roboto, sans-serif;
@@ -57,6 +58,14 @@ h3 {
 	padding: 0px;
 }
 
+header {
+	top: 0;
+	left: 0;
+	position: fixed;
+	width: 100%;
+	background: #ffffff;
+	z-index: 1;
+}
 /* nav section */
 
 .container {
@@ -153,7 +162,7 @@ h3 {
 
 	color: #757575;
 	text-decoration: none;
-	transition: color 2250ms var(--timing-transition);
+	transition: color 250ms var(--timing-transition);
 }
 
 .contacts .link:hover,
